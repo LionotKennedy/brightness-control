@@ -1,18 +1,18 @@
 {
   "name": "brightness-control-responsive",
   "version": "2.0.0",
-  "description": "Application de contrôle de luminosité Windows - Responsive Design",
+  "description": "Application de contr\u00f4le de luminosit\u00e9 Windows - Responsive Design",
   "main": "main.js",
   "author": "TonNom",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env ELECTRON_DISABLE_GPU=1 ELECTRON_DISABLE_HARDWARE_ACCELERATION=1 electron .",
-    "start:responsive": "cross-env ELECTRON_ENABLE_LOGGING=1 electron .",
-    "build": "electron-builder",
-    "build:all": "npm run build:portable && npm run build:setup",
-    "build:portable": "electron-builder --win --config.win.target=portable --publish=never",
-    "build:setup": "electron-builder --win --config.win.target=nsis --publish=never",
-    "build:win": "electron-builder --win",
+    "start": "node init && cross-env ELECTRON_DISABLE_GPU=1 ELECTRON_DISABLE_HARDWARE_ACCELERATION=1 electron .",
+    "start:responsive": "node init && cross-env ELECTRON_ENABLE_LOGGING=1 electron .",
+    "build": "node init && electron-builder",
+    "build:all": "node init && npm run build:portable && npm run build:setup",
+    "build:portable": "node init && electron-builder --win --config.win.target=portable --publish=never",
+    "build:setup": "node init && electron-builder --win --config.win.target=nsis --publish=never",
+    "build:win": "node init && electron-builder --win",
     "dist": "electron-builder --win portable"
   },
   "devDependencies": {
@@ -50,11 +50,15 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         },
         {
           "target": "portable",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "asar": true,
@@ -72,7 +76,9 @@
       "deleteAppDataOnUninstall": true,
       "menuCategory": "Brightness Control",
       "displayLanguageSelector": false,
-      "installerLanguages": ["fr_FR"],
+      "installerLanguages": [
+        "fr_FR"
+      ],
       "runAfterFinish": true,
       "allowElevation": true,
       "perMachine": false,
