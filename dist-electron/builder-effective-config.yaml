@@ -1,0 +1,48 @@
+directories:
+  output: dist-electron
+  buildResources: build
+appId: com.brightness.control.responsive
+productName: Brightness Control
+files:
+  - filter:
+      - '**/*'
+      - '!node_modules/**/*'
+      - '!dist-electron/**/*'
+      - '!*.log'
+      - '!*.md'
+      - '!.git/**/*'
+      - '!.vscode/**/*'
+extraResources:
+  - from: brightness.py
+    to: brightness.py
+asarUnpack:
+  - brightness.py
+win:
+  icon: assets/icon.ico
+  target: nsis
+  asar: true
+  requestedExecutionLevel: asInvoker
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: assets/icon.ico
+  uninstallerIcon: assets/icon.ico
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Brightness Control
+  artifactName: Brightness-Control-Setup-${version}.${ext}
+  deleteAppDataOnUninstall: true
+  menuCategory: Brightness Control
+  displayLanguageSelector: false
+  installerLanguages:
+    - fr_FR
+  runAfterFinish: true
+  allowElevation: true
+  perMachine: false
+  warningsAsErrors: false
+portable:
+  artifactName: Brightness-Control-Portable-${version}.${ext}
+npmRebuild: false
+nodeGypRebuild: false
+buildDependenciesFromSource: false
+electronVersion: 27.3.11

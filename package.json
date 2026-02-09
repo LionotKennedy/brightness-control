@@ -36,11 +36,14 @@
       "!.git/**/*",
       "!.vscode/**/*"
     ],
-    "extraFiles": [
+    "extraResources": [
       {
         "from": "brightness.py",
         "to": "brightness.py"
       }
+    ],
+    "asarUnpack": [
+      "brightness.py"
     ],
     "win": {
       "icon": "assets/icon.ico",
@@ -55,7 +58,7 @@
         }
       ],
       "asar": true,
-      "requestedExecutionLevel": "requireAdministrator"
+      "requestedExecutionLevel": "asInvoker"
     },
     "nsis": {
       "oneClick": false,
@@ -70,15 +73,13 @@
       "menuCategory": "Brightness Control",
       "displayLanguageSelector": false,
       "installerLanguages": ["fr_FR"],
-      "license": "LICENSE.txt",
       "runAfterFinish": true,
       "allowElevation": true,
       "perMachine": false,
       "warningsAsErrors": false
     },
     "portable": {
-      "artifactName": "Brightness-Control-Portable-${version}.${ext}",
-      "requestExecutionLevel": "user"
+      "artifactName": "Brightness-Control-Portable-${version}.${ext}"
     },
     "npmRebuild": false,
     "nodeGypRebuild": false,
