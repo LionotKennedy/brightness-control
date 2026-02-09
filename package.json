@@ -1,10 +1,11 @@
 {
-  "name": "brightness-control",
-  "version": "1.0.0",
-  "description": "Application de contrôle de luminosité Windows",
+  "name": "brightness-control-responsive",
+  "version": "2.0.0",
+  "description": "Application de contrôle de luminosité Windows - Responsive Design",
   "main": "main.js",
   "scripts": {
-    "start": "set ELECTRON_DISABLE_GPU=1 && electron .",
+    "start": "cross-env ELECTRON_DISABLE_GPU=1 ELECTRON_DISABLE_HARDWARE_ACCELERATION=1 electron .",
+    "start:responsive": "cross-env ELECTRON_ENABLE_LOGGING=1 electron .",
     "build": "electron-builder",
     "build:win": "electron-builder --win",
     "dist": "electron-builder --win portable"
@@ -13,25 +14,30 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^27.3.11",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^24.13.3",
+    "cross-env": "^7.0.3"
   },
   "build": {
-    "appId": "com.brightness.control",
-    "productName": "Brightness Control",
+    "appId": "com.brightness.control.responsive",
+    "productName": "Brightness Control Responsive",
     "directories": {
-      "output": "dist"
+      "output": "dist-responsive"
     },
     "files": [
       "**/*",
-      "!node_modules/**/*"
+      "!node_modules/**/*",
+      "!*.log",
+      "!*.md",
+      "!dist*/"
     ],
     "win": {
       "target": "portable",
-      "icon": "assets/icon.ico"
+      "icon": "assets/icon.ico",
+      "asar": true
     },
     "portable": {
-      "artifactName": "BrightnessControl.exe"
+      "artifactName": "BrightnessControlResponsive.exe"
     }
   },
-  "keywords": []
+  "keywords": ["responsive", "brightness", "control", "electron"]
 }
