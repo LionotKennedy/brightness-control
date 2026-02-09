@@ -3,15 +3,18 @@
   "version": "2.0.0",
   "description": "Application de contrôle de luminosité Windows - Responsive Design",
   "main": "main.js",
+  "author": "TonNom",
+  "license": "MIT",
   "scripts": {
     "start": "cross-env ELECTRON_DISABLE_GPU=1 ELECTRON_DISABLE_HARDWARE_ACCELERATION=1 electron .",
     "start:responsive": "cross-env ELECTRON_ENABLE_LOGGING=1 electron .",
     "build": "electron-builder",
+    "build:all": "npm run build:portable && npm run build:setup",
+    "build:portable": "electron-builder --win --config.win.target=portable --publish=never",
+    "build:setup": "electron-builder --win --config.win.target=nsis --publish=never",
     "build:win": "electron-builder --win",
     "dist": "electron-builder --win portable"
   },
-  "author": "TonNom",
-  "license": "MIT",
   "devDependencies": {
     "electron": "^27.3.11",
     "electron-builder": "^24.13.3",
@@ -19,25 +22,73 @@
   },
   "build": {
     "appId": "com.brightness.control.responsive",
-    "productName": "Brightness Control Responsive",
+    "productName": "Brightness Control",
     "directories": {
-      "output": "dist-responsive"
+      "output": "dist-electron",
+      "buildResources": "build"
     },
     "files": [
       "**/*",
       "!node_modules/**/*",
+      "!dist-electron/**/*",
       "!*.log",
       "!*.md",
-      "!dist*/"
+      "!.git/**/*",
+      "!.vscode/**/*"
+    ],
+    "extraFiles": [
+      {
+        "from": "brightness.py",
+        "to": "brightness.py"
+      }
     ],
     "win": {
-      "target": "portable",
       "icon": "assets/icon.ico",
-      "asar": true
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "asar": true,
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Brightness Control",
+      "artifactName": "Brightness-Control-Setup-${version}.${ext}",
+      "deleteAppDataOnUninstall": true,
+      "menuCategory": "Brightness Control",
+      "displayLanguageSelector": false,
+      "installerLanguages": ["fr_FR"],
+      "license": "LICENSE.txt",
+      "runAfterFinish": true,
+      "allowElevation": true,
+      "perMachine": false,
+      "warningsAsErrors": false
     },
     "portable": {
-      "artifactName": "BrightnessControlResponsive.exe"
-    }
+      "artifactName": "Brightness-Control-Portable-${version}.${ext}",
+      "requestExecutionLevel": "user"
+    },
+    "npmRebuild": false,
+    "nodeGypRebuild": false,
+    "buildDependenciesFromSource": false
   },
-  "keywords": ["responsive", "brightness", "control", "electron"]
+  "keywords": [
+    "responsive",
+    "brightness",
+    "control",
+    "electron",
+    "windows"
+  ]
 }
