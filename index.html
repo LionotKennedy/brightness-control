@@ -1,521 +1,6 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Contrôle de Luminosité</title>
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        user-select: none;
-        -webkit-app-region: drag;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(10px, 3vw, 20px); /* Espacement adaptable */
-    }
-
-    .container {
-        width: 100%;
-        max-width: 420px;
-        padding: clamp(15px, 4vw, 25px);
-        display: flex;
-        flex-direction: column;
-        gap: clamp(15px, 4vw, 30px);
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .title {
-        font-size: clamp(18px, 5vw, 24px);
-        font-weight: 600;
-    }
-
-    .controls {
-        -webkit-app-region: no-drag;
-        display: flex;
-        gap: 10px;
-    }
-
-    .btn {
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        width: clamp(28px, 7vw, 35px);
-        height: clamp(28px, 7vw, 35px);
-        border-radius: 50%;
-        color: white;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: clamp(16px, 4vw, 20px);
-        transition: background 0.3s;
-    }
-
-    .btn:hover {
-        background: rgba(255, 255, 255, 0.3);
-    }
-
-    .brightness-display {
-        text-align: center;
-    }
-
-    .brightness-value {
-        font-size: clamp(36px, 10vw, 60px);
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
-
-    .brightness-label {
-        font-size: clamp(12px, 3vw, 16px);
-        opacity: 0.8;
-    }
-
-    .slider-container {
-        -webkit-app-region: no-drag;
-        padding: 0 clamp(10px, 3vw, 20px);
-    }
-
-    input[type="range"] {
-        width: 100%;
-        height: 8px;
-        -webkit-appearance: none;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        outline: none;
-    }
-
-    input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: clamp(20px, 6vw, 28px);
-        height: clamp(20px, 6vw, 28px);
-        background: white;
-        border-radius: 50%;
-        cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .quick-controls {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* ← Responsive magique */
-        gap: clamp(8px, 2vw, 12px);
-        -webkit-app-region: no-drag;
-    }
-
-    .quick-btn {
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        padding: clamp(10px, 2vw, 15px);
-        border-radius: 8px;
-        color: white;
-        cursor: pointer;
-        transition: all 0.3s;
-        font-size: clamp(13px, 3.5vw, 16px);
-    }
-
-    .quick-btn:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .quick-btn.active {
-        background: white;
-        color: #667eea;
-    }
-
-    .adjust-buttons {
-        display: flex;
-        justify-content: center;
-        gap: clamp(15px, 5vw, 30px);
-        -webkit-app-region: no-drag;
-    }
-
-    .adjust-btn {
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        width: clamp(45px, 12vw, 60px);
-        height: clamp(45px, 12vw, 60px);
-        border-radius: 50%;
-        color: white;
-        font-size: clamp(22px, 6vw, 30px);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.3s;
-    }
-
-    .adjust-btn:hover {
-        background: rgba(255, 255, 255, 0.3);
-    }
-</style>
-
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="title">🌤️ Luminosité</div>
-            <div class="controls">
-                <button class="btn" id="minimize-btn">−</button>
-                <button class="btn" id="close-btn">×</button>
-            </div>
-        </div>
-        
-        <div class="brightness-display">
-            <div class="brightness-value" id="brightness-value">50%</div>
-            <div class="brightness-label">Luminosité actuelle</div>
-        </div>
-        
-        <div class="slider-container">
-            <input type="range" min="0" max="100" value="50" class="slider" id="brightness-slider">
-        </div>
-        
-        <div class="quick-controls" id="quick-controls">
-            <button class="quick-btn" data-value="0">0%</button>
-            <button class="quick-btn" data-value="25">25%</button>
-            <button class="quick-btn" data-value="50">50%</button>
-            <button class="quick-btn" data-value="75">75%</button>
-        </div>
-        
-        <div class="adjust-buttons">
-            <button class="adjust-btn" id="decrease-btn">−</button>
-            <button class="adjust-btn" id="increase-btn">+</button>
-        </div>
-    </div>
-
-    <script src="renderer.js"></script>
-</body>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contrôle de Luminosité</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-       
-        html, body {
-            height: 100%;
-            overflow: auto; /* ✅ SCROLL ACTIVÉ */
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            user-select: none;
-            -webkit-app-region: drag;
-        }
-       
-        .container {
-            min-height: 100vh;
-            padding: 20px;
-            max-width: 500px; /* ✅ MAX WIDTH POUR GRAND ÉCRAN */
-            margin: 0 auto; /* ✅ CENTRE */
-            display: flex;
-            flex-direction: column;
-        }
-       
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-shrink: 0; /* ✅ NE SE COMPRIME PAS */
-        }
-       
-        .title {
-            font-size: clamp(18px, 5vw, 24px); /* ✅ RESPONSIVE */
-            font-weight: 600;
-        }
-       
-        .controls {
-            -webkit-app-region: no-drag;
-            display: flex;
-            gap: 8px;
-        }
-       
-        .btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: clamp(28px, 8vw, 32px);
-            height: clamp(28px, 8vw, 32px);
-            border-radius: 50%;
-            color: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: clamp(16px, 4vw, 18px);
-            transition: background 0.3s;
-            flex-shrink: 0;
-        }
-       
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-       
-        .brightness-display {
-            text-align: center;
-            margin: 20px 0;
-            flex-shrink: 0;
-        }
-       
-        .brightness-value {
-            font-size: clamp(36px, 12vw, 56px); /* ✅ RESPONSIVE */
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-       
-        .brightness-label {
-            font-size: clamp(12px, 3vw, 16px);
-            opacity: 0.8;
-        }
-       
-        .slider-container {
-            margin: 20px 0;
-            padding: 0 clamp(10px, 5vw, 20px);
-            -webkit-app-region: no-drag;
-            flex: 1; /* ✅ PREND L'ESPACE DISPONIBLE */
-        }
-       
-        input[type="range"] {
-            width: 100%;
-            height: 8px;
-            -webkit-appearance: none;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            outline: none;
-        }
-       
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: clamp(20px, 6vw, 28px);
-            height: clamp(20px, 6vw, 28px);
-            background: white;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-       
-        .quick-controls {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); 
-            gap: clamp(6px, 2vw, 12px);
-            margin: 20px 0;
-            -webkit-app-region: no-drag;
-        }
-       
-        .quick-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            padding: clamp(8px, 3vw, 12px);
-            border-radius: 8px;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-align: center;
-            font-size: clamp(12px, 3vw, 14px);
-            min-height: 44px; 
-        }
-       
-        .quick-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-       
-        .quick-btn.active {
-            background: white;
-            color: #667eea;
-        }
-       
-        .adjust-buttons {
-            display: flex;
-            justify-content: center;
-            gap: clamp(12px, 4vw, 24px);
-            margin: 20px 0;
-            padding-bottom: 20px; 
-            -webkit-app-region: no-drag;
-        }
-       
-        .adjust-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: clamp(44px, 12vw, 56px);
-            height: clamp(44px, 12vw, 56px);
-            border-radius: 50%;
-            color: white;
-            font-size: clamp(20px, 6vw, 28px);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
-            flex-shrink: 0;
-        }
-       
-        .adjust-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .quick-controls {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .header {
-                padding-bottom: 10px;
-            }
-        }
-
-        
-        @media (max-height: 500px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .brightness-display {
-                margin: 10px 0;
-            }
-            
-            .slider-container {
-                margin: 10px 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="title">🌤️ Luminosité</div>
-            <div class="controls">
-                <button class="btn" id="minimize-btn">−</button>
-                <button class="btn" id="close-btn">×</button>
-            </div>
-        </div>
-       
-        <div class="brightness-display">
-            <div class="brightness-value" id="brightness-value">50%</div>
-            <div class="brightness-label">Luminosité actuelle</div>
-        </div>
-       
-        <div class="slider-container">
-            <input type="range" min="0" max="100" value="50" class="slider" id="brightness-slider">
-        </div>
-       
-        <div class="quick-controls" id="quick-controls">
-            <button class="quick-btn" data-value="0">0%</button>
-            <button class="quick-btn" data-value="25">25%</button>
-            <button class="quick-btn" data-value="50">50%</button>
-            <button class="quick-btn" data-value="75">75%</button>
-            <button class="quick-btn" data-value="100">100%</button> 
-        </div>
-       
-        <div class="adjust-buttons">
-            <button class="adjust-btn" id="decrease-btn">−</button>
-            <button class="adjust-btn" id="increase-btn">+</button>
-        </div>
-    </div>
-    <script src="renderer.js"></script>
-</body>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -527,21 +12,30 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
-        
+
         :root {
             --primary-color: #667eea;
             --secondary-color: #764ba2;
+            --accent-color: #f093fb;
             --text-color: #ffffff;
-            --bg-color: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            --card-bg: rgba(255, 255, 255, 0.1);
-            --hover-bg: rgba(255, 255, 255, 0.2);
-            --active-bg: rgba(255, 255, 255, 0.3);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            --border-radius: 16px;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            --inner-glow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            --hover-glow: 0 0 20px rgba(102, 126, 234, 0.4);
+            --border-radius: 24px;
+            --blur-amount: 20px;
         }
-        
+
         body {
-            background: var(--bg-color);
+            /* Background animé moderne */
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(102, 126, 234, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(118, 75, 162, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(240, 147, 251, 0.2) 0%, transparent 70%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
             color: var(--text-color);
             user-select: none;
             -webkit-app-region: drag;
@@ -552,7 +46,21 @@
             align-items: center;
             justify-content: center;
         }
-        
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .app-container {
             width: 90vw;
             max-width: 500px;
@@ -560,17 +68,68 @@
             height: 90vh;
             max-height: 600px;
             min-height: 400px;
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
+
+            /* Glassmorphisme moderne */
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            -webkit-backdrop-filter: blur(var(--blur-amount));
+
+            /* Bordures et ombres */
             border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                var(--glass-shadow),
+                var(--inner-glow);
+
+            /* Effet de profondeur */
+            position: relative;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             padding: min(4vw, 24px);
             margin: auto;
         }
-        
+
+        /* Effet de reflet lumineux */
+        .app-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.1),
+                    transparent);
+            transition: left 0.5s;
+            pointer-events: none;
+        }
+
+        .app-container:hover::before {
+            left: 100%;
+        }
+
+        /* Halo lumineux autour */
+        .app-container::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: var(--border-radius);
+            padding: 1px;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.3),
+                    transparent 40%,
+                    transparent 60%,
+                    rgba(255, 255, 255, 0.1));
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -578,50 +137,63 @@
             padding-bottom: min(4vw, 24px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             flex-shrink: 0;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .title {
             font-size: clamp(18px, 4vw, 24px);
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-        
+
         .controls {
             -webkit-app-region: no-drag;
             display: flex;
             gap: min(2vw, 12px);
         }
-        
+
         .btn {
-            background: var(--hover-bg);
-            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             width: clamp(28px, 8vw, 36px);
             height: clamp(28px, 8vw, 36px);
-            border-radius: 50%;
+            border-radius: 12px;
             color: var(--text-color);
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: clamp(16px, 4vw, 20px);
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .btn:hover {
-            background: var(--active-bg);
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--hover-glow);
+            border-color: rgba(255, 255, 255, 0.4);
         }
-        
+
+        .btn:active {
+            transform: translateY(0) scale(0.95);
+        }
+
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             padding: min(5vw, 30px) 0;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .brightness-section {
             text-align: center;
             flex: 1;
@@ -629,27 +201,35 @@
             flex-direction: column;
             justify-content: center;
         }
-        
+
         .brightness-value {
             font-size: clamp(40px, 12vw, 72px);
             font-weight: 700;
             margin-bottom: min(2vw, 12px);
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+            text-shadow:
+                0 2px 20px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
         .brightness-label {
             font-size: clamp(14px, 3vw, 18px);
-            opacity: 0.8;
+            opacity: 0.7;
             margin-bottom: min(5vw, 30px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        
+
         .slider-container {
             width: 100%;
             padding: 0 min(3vw, 20px);
             margin: min(4vw, 24px) 0;
             -webkit-app-region: no-drag;
         }
-        
+
         .slider-wrapper {
             position: relative;
             width: 100%;
@@ -657,83 +237,129 @@
             display: flex;
             align-items: center;
         }
-        
+
         input[type="range"] {
             width: 100%;
             height: 8px;
             -webkit-appearance: none;
-            background: linear-gradient(to right, 
-                rgba(255, 255, 255, 0.2), 
-                rgba(255, 255, 255, 0.8));
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             outline: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        /* Track avec gradient dynamique */
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            border-radius: 10px;
+            background: linear-gradient(90deg,
+                    rgba(102, 126, 234, 0.3) 0%,
+                    rgba(118, 75, 162, 0.5) 50%,
+                    rgba(240, 147, 251, 0.7) 100%);
+        }
+
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             width: clamp(24px, 8vw, 32px);
             height: clamp(24px, 8vw, 32px);
-            background: white;
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 3px solid var(--primary-color);
-            transition: all 0.2s ease;
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.3),
+                0 0 0 4px rgba(102, 126, 234, 0.2);
+            border: 2px solid rgba(102, 126, 234, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: -12px;
+            position: relative;
         }
-        
+
         input[type="range"]::-webkit-slider-thumb:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+            transform: scale(1.15);
+            box-shadow:
+                0 6px 25px rgba(0, 0, 0, 0.4),
+                0 0 0 6px rgba(102, 126, 234, 0.3),
+                0 0 20px rgba(102, 126, 234, 0.5);
         }
-        
+
+        input[type="range"]::-webkit-slider-thumb:active {
+            transform: scale(0.95);
+        }
+
         .slider-ticks {
             display: flex;
             justify-content: space-between;
             width: 100%;
-            margin-top: 8px;
+            margin-top: 12px;
             padding: 0 10px;
         }
-        
+
         .tick {
             font-size: clamp(10px, 2vw, 12px);
-            opacity: 0.6;
+            opacity: 0.5;
+            font-weight: 500;
         }
-        
+
         .quick-controls {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: min(2vw, 12px);
             margin: min(4vw, 24px) 0;
             -webkit-app-region: no-drag;
         }
-        
+
         .quick-btn {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: min(3vw, 16px);
-            border-radius: 12px;
+            padding: min(2vw, 12px) min(1vw, 8px);
+            border-radius: 16px;
             color: var(--text-color);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
-            font-size: clamp(14px, 3vw, 18px);
+            font-size: clamp(11px, 2.5vw, 14px);
             font-weight: 500;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .quick-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
         .quick-btn:hover {
-            background: var(--hover-bg);
+            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                var(--hover-glow);
+            border-color: rgba(255, 255, 255, 0.3);
         }
-        
+
+        .quick-btn:hover::before {
+            opacity: 1;
+        }
+
         .quick-btn.active {
-            background: white;
-            color: var(--primary-color);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+            color: white;
             font-weight: 600;
-            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow:
+                0 5px 20px rgba(102, 126, 234, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
-        
+
         .adjust-section {
             display: flex;
             justify-content: center;
@@ -741,97 +367,176 @@
             margin-top: auto;
             -webkit-app-region: no-drag;
         }
-        
+
         .adjust-btn {
-            background: var(--card-bg);
-            border: none;
-            width: clamp(48px, 15vw, 64px);
-            height: clamp(48px, 15vw, 64px);
-            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: clamp(56px, 18vw, 72px);
+            height: clamp(56px, 18vw, 72px);
+            border-radius: 20px;
             color: var(--text-color);
             font-size: clamp(24px, 8vw, 32px);
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(15px);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .adjust-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
         .adjust-btn:hover {
-            background: var(--hover-bg);
-            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.3),
+                var(--hover-glow);
             border-color: rgba(255, 255, 255, 0.3);
         }
-        
+
+        .adjust-btn:hover::after {
+            opacity: 1;
+        }
+
+        .adjust-btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
         .footer {
             text-align: center;
             font-size: clamp(10px, 2vw, 12px);
             opacity: 0.6;
             padding-top: min(3vw, 20px);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
         }
-        
+
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 400px) {
+            :root {
+                --border-radius: 20px;
+            }
+
             .app-container {
                 width: 95vw;
                 height: 95vh;
                 padding: 16px;
             }
-            
+
             .quick-controls {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
             }
-            
+
+            .quick-btn:nth-child(4),
+            .quick-btn:nth-child(5) {
+                grid-column: span 1;
+            }
+
             .adjust-section {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
+                gap: 20px;
             }
         }
-        
+
         @media (max-height: 450px) {
             .app-container {
                 height: auto;
                 min-height: 95vh;
             }
-            
+
             .main-content {
                 padding: 15px 0;
             }
-            
+
             .brightness-section {
                 padding: 10px 0;
             }
-        }
-        
-        /* Animation pour les mises à jour de luminosité */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .brightness-value.updated {
-            animation: pulse 0.5s ease;
-        }
-        
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --card-bg: rgba(0, 0, 0, 0.2);
-                --hover-bg: rgba(0, 0, 0, 0.3);
+
+            .quick-controls {
+                grid-template-columns: repeat(5, 1fr);
             }
         }
-        
+
+        /* Animation pour les mises à jour de luminosité */
+        @keyframes glowPulse {
+            0% {
+                transform: scale(1);
+                text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            50% {
+                transform: scale(1.05);
+                text-shadow:
+                    0 2px 20px rgba(0, 0, 0, 0.3),
+                    0 0 40px rgba(102, 126, 234, 0.5);
+            }
+
+            100% {
+                transform: scale(1);
+                text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .brightness-value.updated {
+            animation: glowPulse 0.5s ease;
+        }
+
         /* Support pour les écrans tactiles */
         @media (hover: none) and (pointer: coarse) {
-            .btn, .quick-btn, .adjust-btn {
-                min-height: 44px; /* Taille minimale pour le touch */
+
+            .btn,
+            .quick-btn,
+            .adjust-btn {
+                min-height: 44px;
             }
-            
+
             input[type="range"]::-webkit-slider-thumb {
                 width: 36px;
                 height: 36px;
@@ -839,6 +544,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="app-container">
         <div class="header">
@@ -851,12 +557,12 @@
                 <button class="btn" id="close-btn" title="Fermer">×</button>
             </div>
         </div>
-        
+
         <div class="main-content">
             <div class="brightness-section">
                 <div class="brightness-value" id="brightness-value">50%</div>
                 <div class="brightness-label">Luminosité actuelle</div>
-                
+
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <input type="range" min="0" max="100" value="50" class="slider" id="brightness-slider">
@@ -869,7 +575,7 @@
                         <span class="tick">100%</span>
                     </div>
                 </div>
-                
+
                 <div class="quick-controls" id="quick-controls">
                     <button class="quick-btn" data-value="0">🌑 0%</button>
                     <button class="quick-btn" data-value="25">🌘 25%</button>
@@ -878,7 +584,7 @@
                     <button class="quick-btn" data-value="100">🌕 100%</button>
                 </div>
             </div>
-            
+
             <div class="adjust-section">
                 <button class="adjust-btn" id="decrease-btn" title="Diminuer">
                     <span class="icon">−</span>
@@ -888,12 +594,13 @@
                 </button>
             </div>
         </div>
-        
+
         <div class="footer">
-            <div class="status" id="connection-status">● Connecté</div>
+            <div class="status" id="connection-status">Connecté</div>
         </div>
     </div>
 
     <script src="renderer.js"></script>
 </body>
+
 </html>
