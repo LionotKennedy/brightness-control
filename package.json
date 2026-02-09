@@ -1,0 +1,37 @@
+{
+  "name": "brightness-control",
+  "version": "1.0.0",
+  "description": "Application de contrôle de luminosité Windows",
+  "main": "main.js",
+  "scripts": {
+    "start": "set ELECTRON_DISABLE_GPU=1 && electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "dist": "electron-builder --win portable"
+  },
+  "author": "TonNom",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.3.11",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.brightness.control",
+    "productName": "Brightness Control",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "assets/icon.ico"
+    },
+    "portable": {
+      "artifactName": "BrightnessControl.exe"
+    }
+  },
+  "keywords": []
+}
